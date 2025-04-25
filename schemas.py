@@ -1,13 +1,17 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+from pydantic import BaseModel
+from typing import List, Optional
+
 class FanBase(BaseModel):
-    nome: str
-    idade: Optional[int] = None
-    cidade: Optional[str] = None
-    jogo_favorito: Optional[str] = None
-    nivel_engajamento: Optional[str] = None
-    redes_sociais: Optional[List[str]] = []
+    nome_completo: str
+    local: str
+    jogo_favorito: str
+    modalidades: List[str]
+    acompanha_esports: bool
+    acompanha_streamers: bool
+    redes_sociais: Optional[List[str]]
 
 class FanCreate(FanBase):
     pass
